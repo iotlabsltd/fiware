@@ -1,4 +1,3 @@
-from django.utils.importlib import import_module
 from django.conf import settings
 from django.apps import apps
 
@@ -13,14 +12,9 @@ from oauth2_provider.ext.rest_framework import OAuth2Authentication
 
 from ops import QueryContext, UpdateContext, ContextResponses
 from element import ContextElement
+from fiware.utils import import_class
 
-EXPORTED_MODELS = getattr(settings, "FIWARE_EXPORTED_MODELS", set())
-
-
-def import_class(class_string):
-    module, classname = class_string.rsplit(".", 1)
-    m = import_module(module)
-    return getattr(m, classname)
+EXPORTED_MODELS = getattr(settings, "FIWARE_NGSI_EXPORTED_MODELS", set())
 
 
 class NGSI10QueryContext(views.APIView):

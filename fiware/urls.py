@@ -19,5 +19,6 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^oauth2/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     url(r'^api/fiware/ngsi/', include('fiware.ngsi.urls', namespace="ngsi")),
+    url(r'^api/fiware/lb/', include('fiware.leaderboard.urls', namespace="leaderboard")),
     url(r'^admin/', include(admin.site.urls)),
 ]

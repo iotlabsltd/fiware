@@ -107,9 +107,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-FIWARE_EXPORTED_MODELS = {
+FIWARE_NGSI_EXPORTED_MODELS = {
     "tests.testmodel": "fiware.ngsi.tests.serializers.TestModelSerializer",
 }
+
+FIWARE_LEADERBOARD_GAMES = "fiware.leaderboard.tests.games.TestGames"
+
 
 MIGRATION_MODULES = {
     'oauth2_provider': 'fiware.migrations.oauth2_provider',
